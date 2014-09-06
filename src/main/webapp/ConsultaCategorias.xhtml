@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/templates/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:metadata>
+		<f:viewAction action="#{consultaCategoriasBean.consultar}" />
+	</f:metadata>
+
+	<ui:define name="corpo">
+		<h1>Categorias</h1>
+		
+		<h:form id="frm">
+			
+			<p:tree value="#{consultaCategoriasBean.raiz}" var="categoria">
+				<p:treeNode>
+					<h:outputText value="#{categoria.descricao}" />
+				</p:treeNode>
+			</p:tree>
+
+		</h:form>
+		
+	</ui:define>
+
+</ui:composition>
